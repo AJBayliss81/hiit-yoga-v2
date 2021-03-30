@@ -1,0 +1,9 @@
+
+
+/*-- Media Queries --*/
+
+@media (max-width: 576px) {
+    .nav-splitter {
+        padding: 0.5rem 2rem;
+    }
+}
