@@ -35,8 +35,95 @@
 
     <body>
         
-        <header class="container-fluid fixed-top">
-            Nav here
+     <header class="container-fluid fixed-top">
+            <div class="row d-flex bg-warning">
+                <div class="col-lg-3 col-sm-6 mt-auto py-3 text-center text-lg-start">
+                    <a href="{% url 'home' %}" class="display-5 nav-link">HIIT Yoga</a>
+                </div>
+                <div class="d-none d-lg-flex col-7 mt-auto py-3 justify-content-center">
+                    <ul class="nav">
+                        {% if request.user.is_authenticated %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Store</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Clothing</a></li>
+                                    <li><a class="dropdown-item" href="#">Equipment</a></li>
+                                    <li><a class="dropdown-item" href="#">Essentials</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Forum</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Livestream</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Archive</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">My Profile</a>
+                            </li>
+                        {% if request.user.is_superuser %}
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Manage Site</a>
+                            </li>
+                        {% endif %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{url 'account_login' %}">Login</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-6 d-flex mt-auto py-3 justify-content-evenly justify-content-lg-end">
+                    <ul class="list-inline list-unstyled m-0">
+                        <li class="list-inline-item dropdown d-lg-none">
+                            <a href="#" class="nav-link" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <div><i class="fas fa-user fa-lg"></i></div>
+                                    <p class="my-0">My Account</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                        <a href="" class="dropdown-item">Manage Site</a>
+                                    {% endif %}
+                                    <a href="" class="dropdown-item">Store</a>
+                                    <a href="" class="dropdown-item">Forum</a>
+                                    <a href="" class="dropdown-item">Livestream</a>
+                                    <a href="" class="dropdown-item">Archive</a>
+                                    <a href="" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
         </header>
 
         {% if messages %}
