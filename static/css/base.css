@@ -1,4 +1,8 @@
-
+.image-banner-container {
+    background: url('/media/yoga-banner.jpg') no-repeat center center;
+    background-size: cover;
+    height: 35vh;
+}
 
 /*-- Media Queries --*/
 

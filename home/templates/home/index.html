@@ -1,6 +1,31 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container-fluid">
+        <div class="row">
+           <div class="image-banner-container"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <h1>Test</h1>
+    <div class="small-image-container h-100">
+        <div class="row justify-content-center">
+            <div class="col-8 my-4">
+                <h1 class="text-center logo-font display-3">
+                    Come HIIT the mat with us!
+                </h1>
+            </div>
+            <div class="col-8 my-4">
+                <p class="text-center">
+                    Some text explaining why to sign up and join.
+                </p>
+            </div>
+            <div class="text-center my-2">
+                <a href="" class="sign-up-button btn btn-lg rounded-3">Sign Up Now</a>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
