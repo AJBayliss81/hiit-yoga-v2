@@ -39,10 +39,10 @@
         
      <header class="container-fluid navbar-fixed-top">
             <div class="row d-flex bg-warning">
-                <div class="col-lg-3 col-sm-6 mt-auto py-3 text-center text-lg-start">
+                <div class="col-lg-3 col-sm-6 mt-auto py-2 text-center text-lg-start">
                     <a href="{% url 'home' %}" class="display-5 nav-link">HIIT Yoga</a>
                 </div>
-                <div class="d-none d-lg-flex col-7 mt-auto py-3 justify-content-center">
+                <div class="d-none d-lg-flex col-7 mt-auto py-2 justify-content-center">
                     <ul class="nav">
                         {% if request.user.is_authenticated %}
                             <li class="nav-item dropdown">
@@ -83,7 +83,7 @@
                         {% endif %}
                     </ul>
                 </div>
-                <div class="col-lg-2 col-sm-6 d-flex mt-auto py-3 justify-content-evenly justify-content-lg-end">
+                <div class="col-lg-2 col-sm-6 d-flex mt-auto py-2 justify-content-evenly justify-content-lg-end">
                     <ul class="list-inline list-unstyled m-0">
                         <li class="list-inline-item dropdown nav-splitter d-lg-none">
                             <a href="#" class="nav-link" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
