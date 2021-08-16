@@ -1,14 +1,46 @@
+/*-- Fonts --*/
+
+.menu-text {
+    color: #8611ad;
+    font-weight: 600;
+    font-family: 'Crimson Text', serif;
+}
+
+.menu-text>li>a {
+    color: #8611ad;
+    font-weight: 600;
+    font-family: 'Crimson Text', serif;
+}
+
+.menu-text>a {
+    color: #8611ad;
+    font-weight: 600;
+    font-family: 'Crimson Text', serif;
+}
+
+/*-- Background --*/
+
 .image-banner-container {
     background: url('/media/yoga-banner.jpg') no-repeat center center;
     background-size: cover;
     height: 25vh;
 }
 
-.card-img-top {
+/*-- Product images --*/
+
+.product-main {
     width: 100%;
     height: 30vh;
     object-fit: cover;
 }
+
+.product-detail {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+/*-- Page breaks --*/
 
 hr.breaker {
     border: 0 none;
@@ -23,6 +55,6 @@ hr.breaker {
 @media (max-width: 576px) {
     .nav-splitter {
         padding: 0 1.4rem;
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 }

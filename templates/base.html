@@ -40,21 +40,22 @@
      <header class="container-fluid navbar-fixed-top">
             <div class="row d-flex bg-warning">
                 <div class="col-lg-3 col-sm-6 mt-auto py-2 text-center text-lg-start">
-                    <a href="{% url 'home' %}" class="display-5 nav-link">HIIT Yoga</a>
+                    <a href="{% url 'home' %}" class="display-5 nav-link menu-text">HIIT Yoga</a>
                 </div>
                 <div class="d-none d-lg-flex col-7 mt-auto py-2 justify-content-center">
-                    <ul class="nav">
+                    <ul class="nav menu-text">
                         {% if request.user.is_authenticated %}
                             <li class="nav-item dropdown">
-                                <a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Store</a>
-                                <ul class="dropdown-menu">
+                                <a class="nav-link menu-text" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Store</a>
+                                <ul class="dropdown-menu menu-text bg-warning">
                                     <li><a class="dropdown-item" href="#">Clothing</a></li>
                                     <li><a class="dropdown-item" href="#">Equipment</a></li>
                                     <li><a class="dropdown-item" href="#">Essentials</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Forum</a>
+                                <a class="nav-link menu-text" href="#">Forum</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Livestream</a>
@@ -83,18 +84,18 @@
                         {% endif %}
                     </ul>
                 </div>
-                <div class="col-lg-2 col-sm-6 d-flex mt-auto py-2 justify-content-evenly justify-content-lg-end">
+                <div class="col-lg-2 col-sm-6 d-flex mt-auto py-2 justify-content-evenly justify-content-md-end">
                     <ul class="list-inline list-unstyled m-0">
                         <li class="list-inline-item dropdown nav-splitter d-lg-none">
                             <a href="#" class="nav-link" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center">
+                                <div class="text-center menu-text">
                                     <div><i class="fas fa-user fa-lg"></i></div>
                                     <p class="my-0">My Account</p>
                                 </div>
                             </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <div class="dropdown-menu menu-text bg-warning border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
-                                    <a href="" class="dropdown-item">Store</a>
+                                    <a href="{% url 'products' %}" class="dropdown-item">Store</a>
                                     <a href="" class="dropdown-item">Forum</a>
                                     <a href="" class="dropdown-item">Livestream</a>
                                     <a href="" class="dropdown-item">Archive</a>
@@ -111,7 +112,7 @@
                         </li>
                         <li class="list-inline-item nav-splitter">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="">
-                            <div class="text-center">
+                            <div class="text-center menu-text">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
