@@ -48,9 +48,10 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link menu-text" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Store</a>
                                 <ul class="dropdown-menu menu-text bg-warning">
-                                    <li><a class="dropdown-item" href="#">Clothing</a></li>
-                                    <li><a class="dropdown-item" href="#">Equipment</a></li>
-                                    <li><a class="dropdown-item" href="#">Essentials</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=tops,leggings,other_clothing">Clothing</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=weights,fitness_trackers,other_equipment">Equipment</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=footwear">Footwear</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=mats,other_products">Essentials</a></li>
                                     <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
                                 </ul>
                             </li>
