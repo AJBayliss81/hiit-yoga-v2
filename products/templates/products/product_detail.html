@@ -27,12 +27,27 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4 d-flex align-items-center">
                 <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0 text-uppercase fw-bold">{{ product.name }}</p>
+                    <div class="row">
+                        <p class="mb-0 text-uppercase fw-bold">{{ product.name }}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            {% if product.category %}
+                                <p class="small mt-1 mb-0">
+                                    <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted text-decoration-none">
+                                        <i class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
+                                    </a>
+                                </p>
+                            {% else %}
+                                <p class="small mt-1 mb-0">No category</p>
+                            {% endif %}
+                        </div>
+                    </div>
                     <div class="row mb-5">
-                        <div class="col">
+                        <div class="col-6">
                             <p class="lead mb-0 fw-bold">£{{ product.price }}</p>
                         </div>
-                        <div class="col text-end">
+                        <div class="col-5 col-sm-4 text-end">
                             {% if product.rating %}
                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                             {% else %}

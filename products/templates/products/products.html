@@ -13,43 +13,112 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-10 offset-1 text-center mt-3">
-                <h3 class="text-uppercase">Products</h3>
-                <hr class="w-50 offset-3 mb-1">
-            </div>
-            <div class="col-10 w-100 d-flex justify-content-center my-3">
-                <form method="GET" action="{% url 'products' %}">
-                    <div class="input-group">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search the store">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <h3 class="text-uppercase">Products</h3>
                     </div>
-                </form>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="sortButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        Sort:
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="sortButton">
-                        <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">Price (Low - High)</a></li>
-                        <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=desc">Price (High - Low)</a></li>
-                        <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">Rating (High - Low)</a></li>
-                        <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=asc">Rating (Low - High)</a></li>
-                        <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">Category</a></li>
-                      </ul>
+                </div>
+                <!-- Product category buttons -->
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <div class="product-btn-wrapper d-none d-md-flex">
+                            <div class="dropdown">
+                                <button class="btn btn-sm dropdown-toggle bg-warning rounded-0 border-white menu-text" type="button" id="categoryClothing" data-bs-toggle="dropdown" aria-expanded="false">
+                                Clothing
+                                </button>
+                                <ul class="dropdown-menu bg-warning menu-text" aria-labelledby="categoryClothing">
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=tops,leggings,other_clothing">All Clothing</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=tops">Tops</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=leggings">Leggings</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=other_clothing">Other Clothing</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-sm dropdown-toggle bg-warning rounded-0 border-white menu-text" type="button" id="categoryEquipment" data-bs-toggle="dropdown" aria-expanded="false">
+                                Equipment
+                                </button>
+                                <ul class="dropdown-menu bg-warning menu-text" aria-labelledby="categoryEquipment">
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=weights,fitness_trackers,other_equipment">All Equipment</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=weights">weights</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=fitness_trackers">Fitness Trackers</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=other_equipment">Other Equipment</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-sm dropdown-toggle bg-warning rounded-0 border-white menu-text" type="button" id="categoryFootwear" data-bs-toggle="dropdown" aria-expanded="false">
+                                Footwear
+                                </button>
+                                <ul class="dropdown-menu bg-warning menu-text" aria-labelledby="categoryFootwear">
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=footwear">All Footwear</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-sm dropdown-toggle bg-warning rounded-0 border-white menu-text" type="button" id="categoryEssentials" data-bs-toggle="dropdown" aria-expanded="false">
+                                Essentials
+                                </button>
+                                <ul class="dropdown-menu bg-warning menu-text" aria-labelledby="categoryEssentials">
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=mats,other_products">All Essentials</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=mats,other_products">Yoga Mats</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'products' %}?category=mats,other_products">Other Essentials</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col mobile-sidenav-btn d-md-none d-flex justify-content-center">
+                            <button class="btn btn-sm bg-warning menu-text">
+                                Browse Products
+                            </button>
+                        </div>   
+                    </div>
+                </div>
+                <!-- Search box-->
+                <div class="row">
+                    <div class="col-10 w-100 d-flex justify-content-center my-1">
+                        <form method="GET" action="{% url 'products' %}">
+                            <div class="input-group">
+                                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search the store">
+                                <div class="input-group-append">
+                                    <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                        <span class="icon">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="sortButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Sort:
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="sortButton">
+                                <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">Price (Low - High)</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=desc">Price (High - Low)</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">Rating (High - Low)</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=asc">Rating (Low - High)</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">Category</a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-4">
+                        <hr class="w-75 offset-1 mb-1">
+                        <span>Currently viewing:</span>
+                        {% for c in current_categories %}
+                            <a href="{% url 'products' %}?category={{ c.name }}" class="category-badge text-decoration-none">
+                                <span class="p2 my-1 current-categories rounded-pill border border-dark bg-warning menu-text">{{ c.friendly_name }}</span>
+                            </a>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
+        
 
         <div class="row">
             <div class="col">
 
                 <!-- Product cards -->
                 <div class="product-container col-10 offset-1">
-                    <div class="row mt-1 mb-2"></div>
                     <div class="row">
                         {% for product in products %}
                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-2">
@@ -64,16 +133,31 @@
                                         </a>
                                     {% endif %}
                                     <div class="card-body pb-0">
-                                        <p class="mb-0">{{ product.name }}</p>
+                                        <div class="row">
+                                            <p class=" col mb-0">{{ product.name }}</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                {% if product.category %}
+                                                    <p class="small mt-1 mb-0">
+                                                        <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted text-decoration-none">
+                                                            <i class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
+                                                        </a>
+                                                    </p>
+                                                {% else %}
+                                                    <p class="small mt-1 mb-0">No category</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="card-footer bg-white pt-0 border-0">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="row">
-                                                    <div class="col">
+                                                    <div class="col-6">
                                                         <p class="lead mb-0 text-start fw-bold">£{{ product.price }}</p>
                                                     </div>
-                                                    <div class="col text-end">
+                                                    <div class="col-6 text-end">
                                                         {% if product.rating %}
                                                             <small class="text-muted text-end"><i class="fas fa-star mr-1"></i> {{ product.rating }} / 5</small>
                                                         {% else %}

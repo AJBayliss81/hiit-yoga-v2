@@ -46,7 +46,7 @@
                     <ul class="nav menu-text">
                         {% if request.user.is_authenticated %}
                             <li class="nav-item dropdown">
-                                <a class="nav-link menu-text" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Store</a>
+                                <a class="nav-link menu-text dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Store</a>
                                 <ul class="dropdown-menu menu-text bg-warning">
                                     <li><a class="dropdown-item" href="{% url 'products' %}?category=tops,leggings,other_clothing">Clothing</a></li>
                                     <li><a class="dropdown-item" href="{% url 'products' %}?category=weights,fitness_trackers,other_equipment">Equipment</a></li>
@@ -80,7 +80,7 @@
                                 <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{url 'account_login' %}">Login</a>
+                                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                             </li>
                         {% endif %}
                     </ul>

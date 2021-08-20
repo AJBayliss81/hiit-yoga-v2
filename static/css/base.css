@@ -26,6 +26,18 @@
     height: 25vh;
 }
 
+/*-- Badges --*/
+
+a.category-badge > span.badge:hover {
+    background: #8611ad !important;
+    color: #ffc107 !important;
+}
+
+.current-categories {
+    font-size: 0.8rem;
+    padding: 0.5em;
+}
+
 /*-- Product images --*/
 
 .product-main {
