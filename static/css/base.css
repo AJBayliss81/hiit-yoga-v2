@@ -52,6 +52,12 @@ a.category-badge > span.badge:hover {
     object-fit: cover;
 }
 
+/*-- Buttons --*/
+
+.btn-sort {
+    margin: 0 0.5rem;
+}
+
 /*-- Page breaks --*/
 
 hr.breaker {
