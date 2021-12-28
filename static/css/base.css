@@ -26,6 +26,11 @@ header {
     font-family: 'Crimson Text', serif;
 }
 
+.warning-text {
+    color: #eb0303;
+    font-weight: 600;
+}
+
 /*-- Background --*/
 
 .image-banner-container {
