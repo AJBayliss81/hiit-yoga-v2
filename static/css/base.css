@@ -39,9 +39,20 @@ header {
     height: 25vh;
 }
 
+/*-- Banner --*/
+
+#delivery-banner {
+    border-top: 10px solid #8611ad;
+}
+
 /*-- Badges --*/
 
-a.category-badge > span.badge:hover {
+.category-badge {
+    background: #ffc107;
+    color: #8611ad;
+}
+
+.category-badge:hover {
     background: #8611ad !important;
     color: #ffc107 !important;
 }
