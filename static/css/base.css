@@ -29,6 +29,7 @@ header {
 .warning-text {
     color: #eb0303;
     font-weight: 600;
+    font-family: 'Crimson Text', serif;
 }
 
 /*-- Background --*/
@@ -80,6 +81,11 @@ header {
 
 .btn-sort {
     margin: 0 0.5rem;
+}
+
+.update-link,
+.remove-item {
+    cursor: pointer;
 }
 
 /*-- Page breaks --*/
